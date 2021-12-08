@@ -1,0 +1,14 @@
+[
+	{              
+		"$type":               "occ/trail",
+		"$refId":              "TrailTest1",
+		"name":               "TrailTest1",
+		"$action":            "reconcile",
+		"status":               "ACTIVE",
+		"type": "RING_SECTION",
+		"bandWidth":    "BD_test3",
+		"assignmentType":          "PREDEFINED_AUTO",
+		"protectionType":            "SHARED",
+		"$elementsOfTrail": []
+	}
+]
