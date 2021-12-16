@@ -1,0 +1,53 @@
+[
+	{	
+		"$type":	"occ/trail",
+		"$refId":	"TrailTest1",
+		"name": 	"TrailTest1",
+		"$action": 	"lookup",
+		"status": 	"ACTIVE",
+		"type": 	"Ring Section",
+		"bandWidth": 	"BD_test3",
+		"assignmentType": 	"PREDEFINED_AUTO",
+		"protectionType": 	"SHARED"
+	},
+	{
+		"$type": "occ/trailElemGrp",
+		"$refId": "PARALLEL_GROUP",
+		"$action": "lookup",
+		"name": "parallel_group_1",
+		"$trailOfElement": 
+		[
+			"TrailTest1"
+		]
+	},
+	{
+		"$type": "occ/trailElemSeq",
+		"$refId": "SEQUENCE_GROUP",
+		"$action": "lookup",
+		"name": "sequence_group_1",
+		"$elementsOfSequence": 
+		[
+			"TrailTest1"
+		],
+		"$groupOfElements": 
+		[
+		    "PARALLEL_GROUP"
+		]
+	},
+	{	
+		"$type":	"occ/trail",
+		"$refId":	"TrailTest1",
+		"name": 	"TrailTest1",
+		"$action": 	"processAssociations",
+		"$elementsOfTrail": [
+			{
+				"$refId": "SEQUENCE_GROUP",
+				"$action" : "delete",
+				
+				"$refId": "PARALLEL_GROUP",
+				"$action" : "delete"
+			}
+			
+		]
+	}
+]
